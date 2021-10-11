@@ -2,6 +2,8 @@
 #include <QVBoxLayout>
 #include <QAction>
 #include <QMenuBar>
+#include <maintoolbar.h>
+#include "splittermain.h"
 
 MainWindow:: MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -11,6 +13,15 @@ MainWindow:: MainWindow(QWidget *parent)
 
     QVBoxLayout *verticalMainLayout = new QVBoxLayout();
     mainContainer->setLayout(verticalMainLayout);
+
+    MainToolBar *mainToolbar = new MainToolBar(mainContainer);
+
+    verticalMainLayout->addWidget(mainToolbar);
+    verticalMainLayout->setSpacing(0);
+    verticalMainLayout->setContentsMargins(0,0,0,0);
+    SplitterMain *split = new SplitterMain(mainContainer);
+    split->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+    verticalMainLayout->addWidget(split);
 
 
 

@@ -10,10 +10,14 @@ CONFIG += c++11
 
 SOURCES += \
     main.cpp \
-    mainwindow.cpp
+    maintoolbar.cpp \
+    mainwindow.cpp \
+    splittermain.cpp
 
 HEADERS += \
-    mainwindow.h
+    maintoolbar.h \
+    mainwindow.h \
+    splittermain.h
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
