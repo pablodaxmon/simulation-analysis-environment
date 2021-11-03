@@ -8,27 +8,15 @@
 MainWindow:: MainWindow(QWidget *parent)
     : QMainWindow(parent)
 {
-    QWidget *mainContainer = new QWidget;
-    setCentralWidget(mainContainer);
-
-    QVBoxLayout *verticalMainLayout = new QVBoxLayout();
-    mainContainer->setLayout(verticalMainLayout);
-
-    MainToolBar *mainToolbar = new MainToolBar(mainContainer);
-
-    verticalMainLayout->addWidget(mainToolbar);
-    verticalMainLayout->setSpacing(0);
-    verticalMainLayout->setContentsMargins(0,0,0,0);
-    SplitterMain *split = new SplitterMain(mainContainer);
-    split->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-    verticalMainLayout->addWidget(split);
 
 
 
-    /* Menus and events-menus */
+
+
     createActions();
     createMenu();
     setWindowTitle(tr("FisicaLab"));
+
 }
 
 
@@ -178,7 +166,21 @@ void MainWindow::createMenu(){
 
 }
 
-void MainWindow::newSimulation(){
+void MainWindow::newSimulation(){QWidget *mainContainer = new QWidget;
+    setCentralWidget(mainContainer);
+
+    QVBoxLayout *verticalMainLayout = new QVBoxLayout();
+    mainContainer->setLayout(verticalMainLayout);
+    verticalMainLayout->setSpacing(0);
+    verticalMainLayout->setContentsMargins(0,0,0,0);
+
+    MainToolBar *mainToolbar = new MainToolBar(mainContainer);
+
+    verticalMainLayout->addWidget(mainToolbar);
+
+    SplitterMain *split = new SplitterMain(mainContainer);
+    split->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+    verticalMainLayout->addWidget(split);
 }
 void MainWindow::loadSimulation(){
 

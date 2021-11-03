@@ -9,15 +9,43 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    calculator.cpp \
+    controlactions.cpp \
+    coresimulator.cpp \
+    dialogtypeenvironment.cpp \
+    environment.cpp \
     main.cpp \
+    mainprogram.cpp \
     maintoolbar.cpp \
     mainwindow.cpp \
-    splittermain.cpp
+    objectlist.cpp \
+    objectstate.cpp \
+    simpleobject.cpp \
+    splittermain.cpp \
+    viewactions.cpp \
+    viewcontrol.cpp \
+    viewproperties.cpp \
+    viewsimulation.cpp \
+    viewtoolbar.cpp
 
 HEADERS += \
+    calculator.h \
+    controlactions.h \
+    coresimulator.h \
+    dialogtypeenvironment.h \
+    environment.h \
+    mainprogram.h \
     maintoolbar.h \
     mainwindow.h \
-    splittermain.h
+    objectlist.h \
+    objectstate.h \
+    simpleobject.h \
+    splittermain.h \
+    viewactions.h \
+    viewcontrol.h \
+    viewproperties.h \
+    viewsimulation.h \
+    viewtoolbar.h
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
